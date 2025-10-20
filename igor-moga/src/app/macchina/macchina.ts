@@ -1,15 +1,19 @@
-import { Component,OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-macchina',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './macchina.html',
-  styleUrl: './macchina.css'
+  styleUrls: ['./macchina.css']
 })
-export class Macchina {
- @Input() machina!: string; 
-  constructor() {
-  }
+export class Macchina implements OnInit {
+  // vettore dei pezzi della macchina
+  pezzi: string[] = ['bulloni', 'viti', 'ferro'];
+
+  @Input() machina!: string; 
+  constructor() {}
   ngOnInit() {}
 }
 
